@@ -1,0 +1,31 @@
+<div class="main">
+    <span style="display: flex;justify-content: center;padding: 10px;"><b>Create</b></span>
+    <span>
+        <form [formGroup]="createForm">
+            <div class="row">
+                <div class="col-2">
+                    <span class="label">Name</span>
+                    <span class="inputField">
+                        <input  placeholder="Enter name...."  formControlName="name"/>
+                    </span>
+                </div>
+                <div class="col-2">
+                    <span class="label">Department</span>
+                        <span class="inputField">
+                            <input placeholder="Enter department..."  formControlName="department"/>
+                    </span>>
+                </div>
+                <div class="col-2">
+                    <span class="label">Salary</span>
+                        <span class="inputField">
+                            <input placeholder="Enter salary..." type="text" formControlName="salary"/>
+                        </span>
+                </div>
+            </div>
+            <div style="display: flex;justify-content:center;padding: 20px;">
+                <span style="margin: 5px;"><button (click)="submit()">Submit</button></span>
+                <span style="margin: 5px;"><button (click)="reset()">Reset</button></span>
+            </div>
+        </form>
+    </span>
+</div>

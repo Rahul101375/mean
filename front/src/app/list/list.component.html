@@ -1,0 +1,45 @@
+<div class="main">
+<span style="display: flex;justify-content: center;padding: 10px;">
+    <b> Display List</b>
+</span>
+<span>
+<form [formGroup]="serachInput">
+    <div class="forms">
+        <span style="margin: 0px 20px;">
+            <label style="margin: 0px 10px;">Select Field</label>
+            <select formControlName="searchBy" placeholder="Select Search Field">
+                <option value="name">name </option>
+                <option value="department">department </option>
+                <option value="salary">salary </option>
+            </select>
+        </span>
+        <span>
+            <input formControlName="searchString" />
+        </span>
+    <span><button (click)="search()"><i class="fa fa-search"></i></button></span>
+    </div>
+</form>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data;index as i" >
+                <td>{{i+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.department}}</td>
+                <td>{{item.salary}}</td>
+                <td><button (click)="edit(item._id)">Edit</button><span><button (click)="delete(item._id)">Delete</button></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</span>
+</div>
